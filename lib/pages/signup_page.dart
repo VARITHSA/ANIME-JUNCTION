@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:learnflutter/routes.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -35,20 +37,67 @@ class _SignupPageState extends State<SignupPage> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 15.0, vertical: 10.0),
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(
                         Radius.circular(12),
                       ),
                     ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelStyle: GoogleFonts.almendra(),
-                          hintText: "Enter the username",
-                          hintStyle: GoogleFonts.almendra(fontSize: 22),
-                          labelText: "Username",
-                          fillColor: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            labelStyle: GoogleFonts.almendra(fontSize: 24),
+                            hintText: "Enter the username",
+                            hintStyle: GoogleFonts.almendra(fontSize: 22),
+                            labelText: "Username",
+                            fillColor: Colors.white),
+                      ),
                     ),
+                  ),
+                ),
+                const SizedBox(height: 5.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 15.0, vertical: 10.0),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            labelStyle: GoogleFonts.almendra(fontSize: 24),
+                            hintText: "Enter the Password",
+                            hintStyle: GoogleFonts.almendra(fontSize: 22),
+                            labelText: "Password",
+                            fillColor: Colors.white),
+                        obscureText: true,
+                        // obscuringCharacter: "*",
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 80.0,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    elevation: 5.0,
+                    primary: const Color(0xffFFB649),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    "LOGIN",
+                    style: GoogleFonts.almendra(
+                        fontSize: 35, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
