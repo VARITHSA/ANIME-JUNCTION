@@ -1,4 +1,5 @@
 class Routes {
-  static String signUpPageRoute = "/signUpPage";
+  static String loginPageRoute = "/loginPage";
   static String homePageRoute = "/homePage";
+  static String signUpPageRoute = "/signUpPage";
 }

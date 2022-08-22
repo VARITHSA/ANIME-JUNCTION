@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:learnflutter/firebase_options.dart';
 import 'package:learnflutter/onboarding/onboarding_screen.dart';
 import 'package:learnflutter/pages/home_page.dart';
+import 'package:learnflutter/pages/login_page.dart';
 import 'package:learnflutter/pages/signup_page.dart';
 import 'package:learnflutter/routes.dart';
 
@@ -31,9 +33,29 @@ class MyApp extends StatelessWidget {
       ),
       home: const OnboardingScreen(),
       routes: {
-        Routes.signUpPageRoute: (context) => const SignupPage(),
+        Routes.loginPageRoute: (context) => const LoginPage(),
         Routes.homePageRoute: (context) => const HomePage(),
+        Routes.signUpPageRoute: (context) => const SignUpPage()
       },
+    );
+  }
+}
+
+class MainBuild extends StatelessWidget {
+  const MainBuild({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const HomePage();
+            } else {
+              return const LoginPage();
+            }
+          }),
     );
   }
 }

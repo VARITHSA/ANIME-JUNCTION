@@ -1,9 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:learnflutter/routes.dart';
 
@@ -65,7 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, Routes.signUpPageRoute);
+                    Navigator.pushNamed(context, Routes.loginPageRoute);
                   },
                   child: Container(
                     alignment: Alignment.centerRight,
@@ -92,11 +89,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-
-                    // child: (onPressed: () => print('s'),)
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 550.0,
                   child: PageView(
                     physics: const ClampingScrollPhysics(),
@@ -301,7 +296,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: ElevatedButton(
                               onPressed: () {
                                 Navigator.pushNamed(
-                                    context, Routes.signUpPageRoute);
+                                    context, Routes.loginPageRoute);
                               },
                               style: ElevatedButton.styleFrom(
                                   alignment: Alignment.center,
@@ -323,29 +318,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
       ),
-      // bottomSheet: _currentPage == _numPage - 1
-      //     ?
-      //     // ? Container(
-      //     //     height: 100.0,
-      //     //     width: double.infinity,
-      //     //     color: Colors.green,
-      //     //     child: GestureDetector(
-      //     //       onTap: () => print('Get Started'),
-      //     //       child: const Center(
-      //     //           child: Padding(
-      //     //         padding: EdgeInsets.only(bottom: 30.0),
-      //     //         child: Text(
-      //     //           "Get Started",
-      //     //           style: TextStyle(
-      //     //             color: Color(0xff5b16d0),
-      //     //             fontSize: 20.0,
-      //     //             fontWeight: FontWeight.bold,
-      //     //           ),
-      //     //         ),
-      //     //       )),
-      //     //     ),
-      //     //   )
-      //     : const Text(''),
     );
   }
 }
