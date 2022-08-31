@@ -180,16 +180,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                       ),
                                     ),
                                   )),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 22.0),
-                                    child: Align(
-                                      // alignment: Alignment(0.5, 0.5),
-                                      alignment: Alignment.bottomCenter,
-                                      child: Image.asset(
-                                        'assets/images/tr4.png',
-                                        height: 380,
-                                        width: 300,
-                                      ),
+                                  Align(
+                                    alignment: Alignment(0.5, 1.5),
+                                    // alignment: Alignment.center,
+                                    child: Image.asset(
+                                      'assets/images/tr9.png',
+                                      // fit: BoxFit.fitWidth,
+                                      height: 380,
+                                      width: 500,
                                     ),
                                   ),
                                 ],
@@ -239,7 +237,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     alignment: Alignment.bottomCenter,
                                     child: Image.asset(
                                       'assets/images/tr5.png',
-                                      height: 360,
+                                      height: 370,
                                       width: 400,
                                     ),
                                   ),
