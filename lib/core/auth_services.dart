@@ -4,23 +4,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthServices {
   static Future<void> signIn(
-    Future<dynamic> a,
     String email,
     String password,
-    Function callback,
+    Function? onSuccessCallback,
+    Function? onExceptionCallback,
   ) async {
     try {
       UserCredential a = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       if (a.user != null) {
-        callback.call();
+        onSuccessCallback?.call();
       }
-    } on Exception catch (e) {
-      log(e.toString());
+    } on Exception {
+      onExceptionCallback?.call();
     }
   }
 
-  static Future signOut(Function callback) async {
+  static Future<void> signOut(Function callback) async {
     try {
       await FirebaseAuth.instance.signOut();
       callback.call();
